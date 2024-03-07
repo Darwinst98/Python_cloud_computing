@@ -1,0 +1,22 @@
+@startuml C4_Diabetes_Prediction_Components
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+    Container(web_app, "Interfaz Web", "HTML/CSS/JavaScript", "Permite a los usuarios ingresar datos que serviran para la predicción") {
+        Component(form, "Formulario HTML", "Formulario para ingresar datos de los usuarios")
+        Component(js, "Script JavaScript", "Envía datos al servidor y muestra las predicciones")
+    }
+    Container(api, "Api Predicción de Diabetes", "FastAPI", "Genera los endpoints para realizar las peticiones al modelo de predicción") {
+        Component(endpoint_post, "Endpoint POST", "Realiza predicciones")
+        Component(endpoint_get, "Endpoint GET", "Devuelve el estado del sistema")
+    }
+    
+    Container(model, "Modelo de Predicción", "Python", "Contiene el modelo de aprendizaje automático para predecir la diabetes")
+
+Rel(api, form, "Envía datos para predicción")
+Rel(js, endpoint_post, "Envía datos para predicción")
+Rel(endpoint_post, model, "Realiza predicción al modelo ML")
+Rel(model, endpoint_post, "Devuelve predicción")
+Rel(endpoint_get, api, "Devuelve estado del sistema")
+
+@enduml

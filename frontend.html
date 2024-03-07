@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictor de Diabetes</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Diabetes Predictor</h1>
+    <!-- Formulario para ingresar datos -->
+    <form id="diabetesForm">
+        <!-- Etiquetas y campos de entrada para cada atributo -->
+        <label for="pregnancies">Pregnancies:</label>
+        <input type="number" id="pregnancies" name="pregnancies" required><br><br>
+
+        <label for="plasmaGlucose">Plasma Glucose:</label>
+        <input type="number" id="plasmaGlucose" name="plasmaGlucose" required><br><br>
+
+        <label for="diastolicBloodPressure">Diastolic Blood Pressure:</label>
+        <input type="number" id="diastolicBloodPressure" name="diastolicBloodPressure" required><br><br>
+
+        <label for="tricepsThickness">Triceps Thickness:</label>
+        <input type="number" id="tricepsThickness" name="tricepsThickness" required><br><br>
+
+        <label for="serumInsulin">Serum Insulin:</label>
+        <input type="number" id="serumInsulin" name="serumInsulin" required><br><br>
+
+        <label for="bmi">BMI:</label>
+        <input type="number" step="0.1" id="bmi" name="bmi" required><br><br>
+
+        <label for="diabetesPedigree">Diabetes Pedigree:</label>
+        <input type="number" step="0.1" id="diabetesPedigree" name="diabetesPedigree" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <!-- Botón de envío -->
+        <button type="submit">Predict</button>
+        <!-- Contenedor para mostrar el resultado de la predicción -->
+        <div id="result"></div>
+    </form>
+    <!-- Script para manejar el envío del formulario -->
+    <script src="envio_formulario.js"></script>
+</body>
+</html>

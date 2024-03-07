@@ -1,0 +1,10 @@
+@startuml C4_Diabetes_Prediction_Components
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+Person(user, "Usuario", "Interactúa con el sistema software")
+System(system, "Predict Diabetes", "Sistema de prediccion de diabetes")
+Rel(user, system, "Utiliza")
+
+@enduml
+

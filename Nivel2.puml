@@ -1,0 +1,17 @@
+@startuml C4_Diabetes_Prediction
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Person(user, "Usuario", "Interactúa con el sistema software")
+
+System_Boundary(system, "Predict Diabetes") {
+    Container(app, "Api Predicción de Diabetes", "FastAPI", "Genera los endpoints para realizar las peticiones al modelo de predicción")
+    Container(web, "Interfaz Web", "HTML/CSS/JavaScript", "Permite a los usuarios ingresar datos que serviran para la predicción")
+    Container(model, "Modelo de Predicción", "Python", "Contiene el modelo de aprendizaje automático para predecir la diabetes")
+}
+
+Rel(user, web, "Utiliza")
+Rel(web, app, "Utiliza")
+Rel(app, model, "Utiliza")
+
+@enduml
